@@ -13,14 +13,39 @@
     <!-- Segunda Parte (Body/Corpo: Estará os paráfragos, as imagens, os links):-->
     <body>
         <!-- Podemo utilizar o <script> aqui no body, e escrever o JS aqui, mas iremos utilizar o script lá na parte de cima (No head) para chamarmos o código que fizemos em .js -->
-        
-        <div id = "soma"> Soma</div>
         <div id = "soma"> Soma</div>
 
         <script>
-        num = "2=46";
-        teste = num
-        document.getElementById("soma").innerHTML = teste;
+
+        var i = 1;
+
+        var tipocalculadora = Number(prompt ("Se você deseja calcular o valor total da Resistência de Resistores em Série > Digite: 1 | Se você deseja calcular o valor total da Resistência de Resistores em Paralelo > Digite 2")) 
+        if (tipocalculadora = 1){
+            var somaresisserie = 0;
+            var quantresiserie = Number(prompt("Quantos Resistores em Série você tem?"));
+            while (i<=quantresiserie){
+                var valorresisserie = parseInt(prompt("Informe o valor da Resistência do Resistor em Série " + i + ":"));
+                somaresisserie = somaresisserie + valorresisserie;
+                console.log("Valor do Resistor em Série " + i + ": " + valorresisserie);
+                i++;
+            }
+            document.getElementById("soma").innerHTML = "A Soma Total dos Resistores em Série Informados é de: " + somaresisserie + " Ω";
+        }
+        else if (tipocalculadora = 2){
+            somaresis = 0;
+            io = 0;
+            var quantresisparalelo = Number(prompt("Quantos Resistores em Paralelo você tem?"));
+            while (i<=quantresisparalelo){
+                var valorresisparalelo = parseInt(prompt("Informe o valor da Resistência do Resistor em Paralelo " + i + ":"));
+                var io = 1 / valorresisparalelo;
+                somaresis = somaresis + io;
+                console.log("Valor do Resistor em Paralelo " + i + ": " + valorresisparalelo);
+                i++;
+            }
+            var somaresisparalelo = 1/somaresis
+            document.getElementById("soma").innerHTML = "A Soma Total dos Resistores em Paralelo Informados é de: " + somaresisparalelo + " Ω";
+        }
+        
         </script>
 
     </body>
